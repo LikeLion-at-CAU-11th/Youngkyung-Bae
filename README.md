@@ -57,6 +57,7 @@ In⭐️구렘 : young_g_ee
 ```
 프로젝트 코드
 ```
+
 * settings.py
 
 <img width="1552" alt="스크린샷 2023-03-25 오후 11 24 39" src="https://user-images.githubusercontent.com/102952855/227755362-befb6ec0-4449-4d3a-8d5f-58873ceb8d69.png">
