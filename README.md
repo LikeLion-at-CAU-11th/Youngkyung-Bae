@@ -52,7 +52,10 @@ In⭐️구렘 : young_g_ee
 
 # 📁과제
 
-## Week 3 : Django 시작하기
+## Week 3 : Django 시작하기  
+
+### ⚽️ 스탠다드  
+
 
 ```
 프로젝트 코드
@@ -93,3 +96,10 @@ In⭐️구렘 : young_g_ee
 Thunder Client 결과
 ```
 <img width="1552" alt="스크린샷 2023-03-25 오후 11 31 07" src="https://user-images.githubusercontent.com/102952855/227755754-98cd84cd-ee30-48ca-856d-5dca527e92f4.png">
+
+### ⚾️ 챌린지
+
+```
+Thunder Client 결과
+```
+<img width="1552" alt="스크린샷 2023-03-28 오후 5 12 41" src="https://user-images.githubusercontent.com/102952855/228173709-9a07669b-1b51-456b-8431-cb7a1a2c493b.png">
