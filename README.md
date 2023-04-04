@@ -103,3 +103,14 @@ Thunder Client 결과
 Thunder Client 결과
 ```
 <img width="1552" alt="스크린샷 2023-03-28 오후 5 12 41" src="https://user-images.githubusercontent.com/102952855/228173709-9a07669b-1b51-456b-8431-cb7a1a2c493b.png">
+
+## Week 4 : DB
+
+### ⚽️ 스탠다드
+
+```
+Thunder Client 결과
+```
+<img width="786" alt="스크린샷 2023-04-04 오후 7 37 47" src="https://user-images.githubusercontent.com/102952855/229768887-3eaa8add-2165-40f2-bb79-666a342c44df.png">
+
+<img width="786" alt="스크린샷 2023-04-04 오후 7 38 01" src="https://user-images.githubusercontent.com/102952855/229768928-ec645384-78e6-4af3-9d31-5a8b888f3d7b.png">
