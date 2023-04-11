@@ -114,3 +114,35 @@ Thunder Client 결과
 <img width="786" alt="스크린샷 2023-04-04 오후 7 37 47" src="https://user-images.githubusercontent.com/102952855/229768887-3eaa8add-2165-40f2-bb79-666a342c44df.png">
 
 <img width="786" alt="스크린샷 2023-04-04 오후 7 38 01" src="https://user-images.githubusercontent.com/102952855/229768928-ec645384-78e6-4af3-9d31-5a8b888f3d7b.png">
+
+## Week 5 : CRUD
+
+### ⚽️ 스탠다드
+
+```
+Thunder Client 결과
+```
+
+* Week 4 챌린지 과제이자, GET : 모든 게시글 목록 불러오는 API 작성
+
+![스크린샷 2023-04-06 오후 3 36 24](https://user-images.githubusercontent.com/102952855/231142041-d715612d-c6bb-4991-b1a6-b4cf4a9e2683.png)
+
+* POST : create_post
+
+![스크린샷 2023-04-06 오후 3 30 03](https://user-images.githubusercontent.com/102952855/231141988-5d5095cc-d8b3-4fc2-8f58-8e8dd568055a.png)
+
+* PATCH : 게시글 수정
+
+![스크린샷 2023-04-06 오후 3 45 56](https://user-images.githubusercontent.com/102952855/231142109-1e2cca62-566d-4275-821d-30058977ad03.png)
+
+* DELETE : 게시글 삭제
+
+![스크린샷 2023-04-06 오후 3 47 53](https://user-images.githubusercontent.com/102952855/231142190-129d5011-e78c-4651-a0e6-96388591708d.png)
+
+* comment 불러오기
+
+![스크린샷 2023-04-06 오후 3 53 35](https://user-images.githubusercontent.com/102952855/231142262-d6627d05-1d31-4f63-92f2-52be8db65ef4.png)
+
+* comment 생성
+
+![스크린샷 2023-04-11 오후 7 50 23](https://user-images.githubusercontent.com/102952855/231143848-ed5eba40-440c-41b8-a5ef-fbc5f956a79e.png)
