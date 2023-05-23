@@ -5,6 +5,12 @@ from django.views.decorators.http import require_http_methods
 from .models import Post, Comment
 import json
 
+from .serializers import PostSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from django.http import Http404
+
 # Create your views here.
 
 def hello_world(request):
@@ -196,3 +202,44 @@ def create_comment(request):
         'message': '댓글 생성 성공',
         'data': new_post_json
     })
+
+
+# 게시글 작성
+class PostList(APIView):
+    def post(self, request, format=None):
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) # 제대로 작동하지 않으면 400 에러
+
+# 게시글 전체 불러오기
+class PostList(APIView):
+    def get(self, request, format=None):
+        posts = Post.objects.all()
+        serializer = PostSerializer(posts, many=True)
+        return Response(serializer.data)
+
+# 게시글 하나 아이디로 불러오기
+class PostDetail(APIView):
+    def get(self,request,id):
+        post = get_object_or_404(Post, post_id=id) # model.py에서 post_id로 짰기 때문에
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
+
+# 게시글 하나 수정하기
+class PostDetail(APIView):
+    def put(self,request,id):
+        post = get_object_or_404(Post, post_id=id)
+        serializer = PostSerializer(post, data=request.data)
+        if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# 게시글 하나 삭제하기
+class PostDetail(APIView):
+    def delete(self,request,id):
+        post = get_object_or_404(Post, post_id=id)
+        post.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
