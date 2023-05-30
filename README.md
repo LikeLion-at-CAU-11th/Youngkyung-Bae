@@ -146,3 +146,22 @@ Thunder Client 결과
 * comment 생성
 
 ![스크린샷 2023-04-11 오후 7 50 23](https://user-images.githubusercontent.com/102952855/231143848-ed5eba40-440c-41b8-a5ef-fbc5f956a79e.png)
+
+
+## Week 9 : DRF - CRUD
+
+### ⚽️ 스탠다드
+
+```
+프로젝트 코드
+```
+
+* view.py
+
+<img width="923" alt="스크린샷 2023-05-30 오후 11 17 22" src="https://github.com/LikeLion-at-CAU-11th/Youngkyung-Bae/assets/102952855/29ea115f-8756-4d8c-b016-47e1a2ce61e2">
+
+<img width="842" alt="스크린샷 2023-05-30 오후 11 18 16" src="https://github.com/LikeLion-at-CAU-11th/Youngkyung-Bae/assets/102952855/4ff2c904-4dd5-43ee-a4ff-50c254e7a537">
+
+* urls.py
+
+<img width="577" alt="스크린샷 2023-05-30 오후 11 18 32" src="https://github.com/LikeLion-at-CAU-11th/Youngkyung-Bae/assets/102952855/6c50de00-73cf-41d6-b94b-2cdcd369195e">
