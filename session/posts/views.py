@@ -225,7 +225,7 @@ class PostList(APIView):
 # 게시글 하나 아이디로 불러오기
 class PostDetail(APIView):
     def get(self,request,id):
-        post = get_object_or_404(Post, post_id=id) # model.py에서 post_id로 짰기 때문에
+        post = get_object_or_404(Post, post_id=id)  # model.py에서 post_id로 짰기 때문에
         serializer = PostSerializer(post)
         return Response(serializer.data)
 
@@ -245,16 +245,22 @@ class PostDetail(APIView):
         post = get_object_or_404(Post, post_id=id)
         post.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-    
-#from rest_framework.response import Response
 
+
+
+#from rest_framework.response import Response
 #from .models import Post
 #from .serializers import PostSerializer
+
+# APIView는 각 request method 마다 직접 serializer 처리 -> 중복 많음 -> Mixin
 
 class PostListMixins(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
+    # ListModelMixin : 데이터베이스에 저장되어 있는 데이터들을 목록 형태로 response body로 리턴
+    # CreateModelMixin : 모델 인스턴스를 생성하고 저장
+    
     def get(self, request, *args, **kwargs):
         return self.list(request)
     
@@ -264,6 +270,10 @@ class PostListMixins(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Ge
 class PostDetailMixins(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+    # RetrieveModelMixin : 존재하는 모델 인스턴스를 리턴
+    # UpdateModelMixin : 모델 인스턴스를 수정하여 저장
+    # DestoryModelMixin : 모델 인스턴스를 삭제
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
@@ -275,17 +285,25 @@ class PostDetailMixins(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixin
         return self.delete(request, *args, **kwargs)
     
 
-#genericsAPiview
-class PostListGenericAPIView(generics.ListAPIView):
+# genericsAPiview
+# Mixin은 여러 개를 상속해야 하기 때문에 가독성이 떨어짐 -> rest_framework.generics에서 이들이 상속한 새로운 클래스를 정의
+
+class PostListGenericAPIView(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+    # ListCreateAPIView : GenericAPIView, ListModeMixin, CreateModelMixin을 상속받음
 
 class PostDetailGenericAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
+    # RetrieveUpdateDestroyAPIView : GenericAPIView, RetrieveModeMixin, UpdateModeMixin, DestroyModelMixin을 상속받음
 
-#viewset
+
+# viewset
+# generics APIView를 통해 많이 간소화 but 여전히 공통적인 queryset과 serializer 따로 기재 -> ViewSet
+
 from rest_framework import viewsets
 
 class PostViewSet(viewsets.ModelViewSet):
