@@ -16,10 +16,10 @@ from rest_framework.routers import DefaultRouter
 
 # APIView
 
-# urlpatterns = [
-#     path('', PostList.as_view()),
-#     path('<int:id>/', PostDetail.as_view()),
-# ]
+urlpatterns = [
+    path('', PostList.as_view()),
+    path('<int:id>/', PostDetail.as_view()),
+]
 # 클래스형 뷰에서는 path에 등록할 때 {Class명}.as_view() 방식으로 view를 연동
 
 
@@ -41,10 +41,10 @@ from rest_framework.routers import DefaultRouter
 
 # ViewSet
 
-urlpatterns = [
-    path('', post_list),
-    path('<int:pk>/', post_detail_vs),
-]
+# urlpatterns = [
+#     path('', post_list),
+#     path('<int:pk>/', post_detail_vs),
+# ]
 
 
 # Router

@@ -13,6 +13,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
 
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
 # Create your views here.
 
 def hello_world(request):
@@ -208,6 +210,9 @@ def create_comment(request):
 
 # 게시글 작성
 class PostList(APIView):
+
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
     def post(self, request, format=None):
         serializer = PostSerializer(data=request.data)
         if serializer.is_valid():
@@ -215,8 +220,7 @@ class PostList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) # 제대로 작동하지 않으면 400 에러
 
-# 게시글 전체 불러오기
-class PostList(APIView):
+    # 게시글 전체 불러오기
     def get(self, request, format=None):
         posts = Post.objects.all()
         serializer = PostSerializer(posts, many=True)
