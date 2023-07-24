@@ -165,3 +165,7 @@ Thunder Client 결과
 * urls.py
 
 <img width="577" alt="스크린샷 2023-05-30 오후 11 18 32" src="https://github.com/LikeLion-at-CAU-11th/Youngkyung-Bae/assets/102952855/6c50de00-73cf-41d6-b94b-2cdcd369195e">
+
+## Week 11 : OAuth2.0
+
+<img width="1207" alt="스크린샷 2023-07-25 오전 12 39 54" src="https://github.com/LikeLion-at-CAU-11th/Youngkyung-Bae/assets/102952855/24ce84ca-0473-4a8a-aa4f-3e900fe78bb3">
